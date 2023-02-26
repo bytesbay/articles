@@ -47,7 +47,7 @@ async function init() {
         title: metadata.title,
         body_markdown: md_content,
         tags: metadata.tags.slice(0, 4),
-        published: false,
+        published: true,
         main_image: metadata.devto_image,
       }
     }, {
@@ -62,7 +62,7 @@ async function init() {
         title: metadata.title,
         body_markdown: md_content,
         tags: metadata.tags.slice(0, 4),
-        published: false,
+        published: true,
         main_image: metadata.devto_image,
       }
     }, {

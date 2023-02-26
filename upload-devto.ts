@@ -48,6 +48,7 @@ async function init() {
         body_markdown: md_content,
         tags: metadata.tags.slice(0, 4),
         published: false,
+        main_image: metadata.devto_image,
       }
     }, {
       headers
@@ -59,10 +60,10 @@ async function init() {
     const post = await http.put('https://dev.to/api/articles/' + current_article_id, {
       article: {
         title: metadata.title,
-        bodyMarkdown: md_content,
-        content: md_content,
+        body_markdown: md_content,
         tags: metadata.tags.slice(0, 4),
         published: false,
+        main_image: metadata.devto_image,
       }
     }, {
       headers

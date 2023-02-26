@@ -11,4 +11,4 @@ export function getDb() {
   return db
 }
 
-export const REPO_URL = 'https://github.com';
+export const REPO_URL = 'https://github.com/bytesbay/articles';

@@ -1,0 +1,21 @@
+{
+  "name": "articles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "u:medium": "ts-node upload-medium.ts",
+    "u:devto": "ts-node upload-devto.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.3.4",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "node-json-db": "^2.1.4",
+    "yaml": "^2.2.1"
+  }
+}

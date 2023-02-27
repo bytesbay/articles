@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "u:medium": "ts-node upload-medium.ts",
     "u:devto": "ts-node upload-devto.ts",
-    "u:hashnode": "ts-node upload-hashnode.ts"
+    "u:hashnode": "ts-node upload-hashnode.ts",
+    "u:a": "ts-node index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "liquidjs": "^10.6.0",
     "node-fetch": "^2.6.9",
     "node-json-db": "^2.1.4",
     "parse-markdown-table": "^0.0.6",

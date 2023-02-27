@@ -1,20 +1,17 @@
 import FS from "fs";
 import { getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
-import { parse, stringify } from 'yaml'
-import { IArticleMetadata } from "./types";
 
-const http = Axios.create({
-  xsrfCookieName: 'xsrf',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-});
+export async function uploadDevto(article_key: string) {
 
-async function init() {
+  const http = Axios.create({
+    xsrfCookieName: 'xsrf',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+  });
 
-  const [ article_key ] = process.argv.slice(2);
   const path = `./posts/${article_key}.md`;
 
-  const { md_content, md_metadata } = await parseMd(path);
+  const { md_content, md_metadata } = await parseMd(path, 'devto');
 
   const db = getDb();
   const secrets = await getSecrets();
@@ -61,5 +58,3 @@ async function init() {
     
   }
 }
-
-init();

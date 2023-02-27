@@ -2,16 +2,15 @@ import FS from "fs";
 import { getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
 
-const http = Axios.create({
+export async function uploadHashnode(article_key: string) {
 
-});
+  const http = Axios.create({
 
-async function init() {
+  });
 
-  const [ article_key ] = process.argv.slice(2);
   const path = `./posts/${article_key}.md`;
 
-  const { md_content, md_metadata } = await parseMd(path);
+  const { md_content, md_metadata } = await parseMd(path, 'hashnode');
 
   const db = getDb();
   const secrets = await getSecrets();
@@ -87,5 +86,3 @@ async function init() {
     
   }
 }
-
-init();

@@ -1,5 +1,5 @@
 import FS from "fs";
-import { REPO_URL, getDb, getSecrets, parseMd } from "./helpers";
+import { getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
 
 const http = Axios.create({

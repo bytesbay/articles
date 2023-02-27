@@ -1,5 +1,5 @@
 import FS from "fs";
-import { REPO_URL, getDb, getSecrets, parseMd } from "./helpers";
+import { getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
 import { parse, stringify } from 'yaml'
 import { IArticleMetadata } from "./types";
@@ -29,8 +29,6 @@ async function init() {
   }
 
   const current_article_id = await db.getData(`/${article_key}/devto`).catch(() => null);
-
-  console.log(md_content);
 
   if(!current_article_id) {
 

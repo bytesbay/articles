@@ -33,8 +33,6 @@ async function init() {
   if(tables) {
     // separate different tables
     const tablesSeparated = tables.map(table => table.split(/\n\|/g));
-
-    console.log(tables);
   }
 
   // const table = await createMarkdownArrayTable(markdown)

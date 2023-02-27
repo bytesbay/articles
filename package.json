@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "u:medium": "ts-node upload-medium.ts",
-    "u:devto": "ts-node upload-devto.ts"
+    "u:devto": "ts-node upload-devto.ts",
+    "u:hashnode": "ts-node upload-hashnode.ts"
   },
   "author": "",
   "license": "ISC",

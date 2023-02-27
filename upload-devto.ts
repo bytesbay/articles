@@ -1,5 +1,5 @@
 import FS from "fs";
-import { REPO_URL, getDb, getSecrets } from "./helpers";
+import { REPO_URL, getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
 import { parse, stringify } from 'yaml'
 import { IArticleMetadata } from "./types";
@@ -11,20 +11,10 @@ const http = Axios.create({
 
 async function init() {
 
-  // get command line arguments
-  const args = process.argv.slice(2);
-
-  const article_key = args[0];
-
-  // article file path
+  const [ article_key ] = process.argv.slice(2);
   const path = `./posts/${article_key}.md`;
 
-  // get metadata of markdown file from 'path' using FS
-  const metadata: IArticleMetadata = parse(FS.readFileSync(path, 'utf8').split('---')[1]);
-  const md_content: string = FS.readFileSync(path, 'utf8').split('---\n')[2]
-    .replace(/^\n/, '') // remove first newline
-    // replace image paths with REPO_URL
-    .replace(/!\[.*\]\((.*)\)/g, `![image](${REPO_URL}$1)`);  
+  const { md_content, md_metadata } = await parseMd(path);
 
   const db = getDb();
   const secrets = await getSecrets();
@@ -40,15 +30,17 @@ async function init() {
 
   const current_article_id = await db.getData(`/${article_key}/devto`).catch(() => null);
 
+  console.log(md_content);
+
   if(!current_article_id) {
 
     const post = await http.post('https://dev.to/api/articles', {
       article: {
-        title: metadata.title,
+        title: md_metadata.title,
         body_markdown: md_content,
-        tags: metadata.tags.slice(0, 4),
+        tags: md_metadata.tags.slice(0, 4),
         published: true,
-        main_image: metadata.devto_image,
+        main_image: md_metadata.devto_image,
       }
     }, {
       headers
@@ -59,11 +51,11 @@ async function init() {
     
     const post = await http.put('https://dev.to/api/articles/' + current_article_id, {
       article: {
-        title: metadata.title,
+        title: md_metadata.title,
         body_markdown: md_content,
-        tags: metadata.tags.slice(0, 4),
+        tags: md_metadata.tags.slice(0, 4),
         published: true,
-        main_image: metadata.devto_image,
+        main_image: md_metadata.devto_image,
       }
     }, {
       headers

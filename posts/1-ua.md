@@ -2,7 +2,7 @@
 
 title: Готуємо ChainSyncer 
 subtitle: Колекція рецептів з використання модуля ChainSyncer 
-devto_image: https://github.com/bytesbay/articles/raw/main/resources/1-1w.jpg
+devto_image: https://github.com/bytesbay/articles/raw/main/resources/1-ua-1w.jpg
 tags:
   - web3
   - blockchain
@@ -99,12 +99,12 @@ syncer.on('Staking.Staked', async (
 У наданому вище коді ховалася доволі серйозна помилка. Оскільки модуль обробляє події паралельно пакетами (для максимальної продуктивності), цілком ймовірно, що більш рання подія буде оброблена після більш пізньої. У результаті, `total_staked` на вашому сервері буде менше, ніж повинно бути.
 
 
-![Проблема послідовності обробки подій](/resources/1-2.jpg)
+![Проблема послідовності обробки подій](/resources/1-ua-2.jpg)
 
 Тут у гру вступає параметр `global_index`. З його допомогою ми можемо визначити найбільш актуальний стан `total_staked` пула.
 
 
-![Вирішення проблеми послідовності обробки подій з використанням global_index](/resources/1-3.jpg)
+![Вирішення проблеми послідовності обробки подій з використанням global_index](/resources/1-ua-3.jpg)
 
 Додаючи деякі правки у наш обробник, ми можемо прибрати ризики помилок синхронізації:
 
@@ -137,7 +137,7 @@ syncer.on('Staking.Staked', async (
 Він збирається ChainSyncer'ом для кожної події шляхом поєднання `blockNumber` та `logIndex`.
 
 
-![З чого складається global_index ](/resources/1-4.jpg)
+![З чого складається global_index ](/resources/1-ua-4.jpg)
 
 Таким чином, ми отримуємо щось на зразок додаткового унікального ID для кожної події.
 

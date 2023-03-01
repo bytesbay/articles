@@ -18,7 +18,7 @@ tags:
 
 {% else if source == "hashnode" %}
 
-Як і обіцяв у [минулій статті](https://bytesbay.hashnode.dev/syncing-your-backend-with-blockchain-using-chainsyncer),  Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
+Як і обіцяв у [минулій статті](https://bytesbay.hashnode.dev/sinhronizaciya-bekendu-z-blokchejnom),  Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
 
 {% endif %}
 

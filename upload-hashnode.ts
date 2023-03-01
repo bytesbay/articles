@@ -51,7 +51,7 @@ export async function uploadHashnode(article_key: string) {
           // tags: md_metadata.tags,
           tags: [],
           coverImageURL: md_metadata.devto_image,
-          isAnonymous: false,
+          // isAnonymous: false,
         },
       },
     }, {

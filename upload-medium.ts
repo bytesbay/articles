@@ -63,6 +63,8 @@ export async function uploadMedium(article_key: string) {
 
   md_content = 
 `
+# ${md_metadata.title}
+
 ${md_metadata.subtitle}
 
 ![${md_metadata.title}](${md_metadata.devto_image})
@@ -125,7 +127,8 @@ ${md_content}
       contentFormat: "markdown",
       content: md_content,
       tags: md_metadata.medium_tags,
-      publishStatus: "public"
+      publishStatus: "public",
+      notifyFollowers: true,
     }, {
       headers,
       withCredentials: true,

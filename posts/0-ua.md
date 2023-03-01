@@ -94,7 +94,7 @@ syncer.on('Items.Transfer', async (
 
 {% if source == "devto" %}
 
-У [наступній статті](https://dev.to/bytesbay/chainsyncer-cookbook-4okm) я напишу рекомендації по роботі з модулем і навіщо потрібен параметр `global_index`.
+У [наступній статті](https://dev.to/bytesbay/gotuiemo-chainsyncer-549g) я напишу рекомендації по роботі з модулем і навіщо потрібен параметр `global_index`.
 
 {% else if source == "hashnode" %}
 

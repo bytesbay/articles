@@ -14,7 +14,7 @@ tags:
 
 {% if source == "devto" %}
 
-Як і обіцяв у  [минулій статті](https://dev.to/bytesbay/building-hybrid-dapps-oef), Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
+Як і обіцяв у  [минулій статті](https://dev.to/bytesbay/sinkhronizatsiia-biekiendu-z-blokchieinom-l7b), Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
 
 {% else if source == "hashnode" %}
 

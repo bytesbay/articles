@@ -18,6 +18,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "easy-table": "^1.2.0",
     "liquidjs": "^10.6.0",
     "node-fetch": "^2.6.9",
     "node-json-db": "^2.1.4",

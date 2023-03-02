@@ -2,7 +2,7 @@
 
 title: Готуємо ChainSyncer 
 subtitle: Колекція рецептів з використання модуля ChainSyncer 
-devto_image: https://github.com/bytesbay/articles/raw/main/resources/1-ua-1w.jpg
+cover_image: https://github.com/bytesbay/articles/raw/main/resources/1-ua-1w.jpg
 tags:
   - web3
   - blockchain

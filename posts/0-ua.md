@@ -2,13 +2,13 @@
 
 title: Як синхронізувати бекенд з блокчейном
 subtitle: Більш гнучкий спосіб індексування блокчейну, ніж може запропонувати TheGraph.
-devto_image: https://github.com/bytesbay/articles/raw/main/resources/1-ua-1w.jpg
+cover_image: https://github.com/bytesbay/articles/raw/main/resources/0-ua-1w.jpg
 tags:
   - web3
   - blockchain
   - architecture
   - nodejs
-  - thegraph # only for medium
+  - thegraph
 
 ---
 

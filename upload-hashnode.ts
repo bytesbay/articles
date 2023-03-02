@@ -1,6 +1,7 @@
 import FS from "fs";
 import { getDb, getSecrets, parseMd } from "./helpers";
 import Axios from "axios";
+import querystring from 'querystring';
 
 export async function uploadHashnode(article_key: string) {
 
@@ -26,14 +27,28 @@ export async function uploadHashnode(article_key: string) {
 
   const current_article_id = await db.getData(`/${article_key}/hashnode`).catch(() => null);
 
-  // const tags = await http.post('https://api.hashnode.com/', {
-  //   query: 'query{ tagCategories{ _id slug name tags{ _id slug name } } }',
-  //   variables: {},
-  // }, {
-  //   headers
-  // }).then(res => res.data.data.tagCategories)
+  const tags: any[] = [];
 
-  // console.log(tags);
+  for (const n of md_metadata.tags) {
+
+    const found_tags = await http.post('https://amerdmzm12-dsn.algolia.net/1/indexes/nodes_prod/query?x-algolia-agent=Algolia%20for%20JavaScript%20(4.9.1)%3B%20Browser', JSON.stringify({
+      "query": n,
+      "filters": "isActive=1",
+      "hitsPerPage": 5
+    }), {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "x-algolia-api-key": "295b17c8b7be099e43e2b2b2b63a7589",
+        "x-algolia-application-id": "AMERDMZM12",
+      }
+    }).then(res => res.data.hits)
+
+    tags.push({
+      name: found_tags[0].name,
+      slug: found_tags[0].slug,
+      _id: found_tags[0].objectID,
+    });
+  }
 
   if(!current_article_id) {
 
@@ -48,9 +63,8 @@ export async function uploadHashnode(article_key: string) {
           title: md_metadata.title,
           contentMarkdown: md_content,
           subtitle: md_metadata.subtitle,
-          // tags: md_metadata.tags,
-          tags: [],
-          coverImageURL: md_metadata.devto_image,
+          tags: tags,
+          coverImageURL: md_metadata.cover_image,
           // isAnonymous: false,
         },
       },
@@ -75,9 +89,8 @@ export async function uploadHashnode(article_key: string) {
           title: md_metadata.title,
           contentMarkdown: md_content,
           subtitle: md_metadata.subtitle,
-          // tags: md_metadata.tags,
-          tags: [],
-          coverImageURL: md_metadata.devto_image,
+          tags: tags,
+          coverImageURL: md_metadata.cover_image,
         },
       },
     }, {

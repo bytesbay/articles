@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "u:medium": "ts-node upload-medium.ts",
-    "u:devto": "ts-node upload-devto.ts",
-    "u:hashnode": "ts-node upload-hashnode.ts",
-    "u:a": "ts-node index.ts"
+    "p": "ts-node index.ts",
+    "publish": "ts-node index.ts"
   },
   "author": "",
   "license": "ISC",

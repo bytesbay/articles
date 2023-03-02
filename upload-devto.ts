@@ -35,7 +35,7 @@ export async function uploadDevto(article_key: string) {
         body_markdown: md_content,
         tags: md_metadata.tags.slice(0, 4),
         published: true,
-        main_image: md_metadata.devto_image,
+        main_image: md_metadata.cover_image,
       }
     }, {
       headers
@@ -50,7 +50,7 @@ export async function uploadDevto(article_key: string) {
         body_markdown: md_content,
         tags: md_metadata.tags.slice(0, 4),
         published: true,
-        main_image: md_metadata.devto_image,
+        main_image: md_metadata.cover_image,
       }
     }, {
       headers

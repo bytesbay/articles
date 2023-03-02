@@ -67,7 +67,7 @@ export async function uploadMedium(article_key: string) {
 
 ${md_metadata.subtitle}
 
-![${md_metadata.title}](${md_metadata.devto_image})
+![${md_metadata.title}](${md_metadata.cover_image})
 
 ${md_content}
 `;

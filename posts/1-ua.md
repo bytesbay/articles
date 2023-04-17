@@ -12,15 +12,15 @@ tags:
 
 ---
 
-{% if source == "devto" %}
+{~~ if source == "devto" ~~}
 
 Як і обіцяв у  [минулій статті](https://dev.to/bytesbay/sinkhronizatsiia-biekiendu-z-blokchieinom-l7b), Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
 
-{% else if source == "hashnode" %}
+{~~ else if source == "hashnode" ~~}
 
 Як і обіцяв у [минулій статті](https://bytesbay.hashnode.dev/sinhronizaciya-bekendu-z-blokchejnom),  Я напишу невеликі рекомендації щодо використання модуля [ChainSyncer](https://github.com/bytesbay/chain-syncer).
 
-{% endif %}
+{~~ endif ~~}
 
 ## Максимальна узгодженість
 

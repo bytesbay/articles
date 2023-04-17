@@ -92,15 +92,15 @@ syncer.on('Items.Transfer', async (
 На даний момент існує лише адаптер для MongoDB. Ваші розробки для різноманітних інших сховищ, таких як **Postgres**, MySQL і OracleDB, широко вітаються.
 Також зараз розробляється розширення модуля (разом із пакетом Helm), яке зробить модуль подібним до RabbitMQ. Це означає, що його буде зручно використовувати в архітектурі мікросервісу.
 
-{% if source == "devto" %}
+{~~ if source == "devto" ~~}
 
 У [наступній статті](https://dev.to/bytesbay/gotuiemo-chainsyncer-549g) я напишу рекомендації по роботі з модулем і навіщо потрібен параметр `global_index`.
 
-{% else if source == "hashnode" %}
+{~~ else if source == "hashnode" ~~}
 
 У [наступній статті](https://bytesbay.hashnode.dev/gotuyemo-chainsyncer) я напишу рекомендації по роботі з модулем і навіщо потрібен параметр `global_index`.
 
-{% endif %}
+{~~ endif ~~}
 
 ---
 

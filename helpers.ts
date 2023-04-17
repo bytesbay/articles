@@ -19,7 +19,8 @@ export const REPO_RAW_URL = 'https://raw.githubusercontent.com/bytesbay/articles
 export async function parseMd(path: string, source: string) {
 
   const engine = new Liquid({
-
+    tagDelimiterLeft: '{~~',
+    tagDelimiterRight: '~~}',
   })
 
   const md_metadata: IArticleMetadata = parse(FS.readFileSync(path, 'utf8').split('---')[1]);
